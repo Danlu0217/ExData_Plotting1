@@ -14,4 +14,8 @@ data1<-subset(data,data$time>="2007-02-01"&data$time<="2007-02-02")
 #Adjust x data, factor converted to numeric
 xdata<-as.numeric(data1$V3)
 xdata2<-xdata/1000
+png(filename = "plot1.png",width=480,height=480)
+#Plot histogram using base plotting sys
 hist(xdata2,col="red",xlab = "Global Active Power (kilowatts)",xlim=c(0,6),main = "Global active power")
+#Turn off device
+dev.off()
